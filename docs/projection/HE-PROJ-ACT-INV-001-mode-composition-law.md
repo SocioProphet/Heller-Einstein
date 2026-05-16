@@ -3,6 +3,7 @@
 Identifier: `HE-PROJ-ACT-INV-001`  
 Status: active conditional capsule; frontier remains open  
 Claim grade: modeling-choice-grade for the v0.1 routing law; theorem-grade for the v0.1 thresholded reachability characterization conditional on this law  
+Proof form: v0.1.1 canonical proof refinement — quotient-map notation and contraction-primary admissibility  
 Intended use: finite cyclic Fourier routing model for periodic activation spectral-attainability analysis  
 Parents: `HE-PROJ-ACT-001`, `HE-PROJ-ACT-002`, `HE-PROJ-003`  
 Anti-seed: `A-HE-PROJ-ACT-002`, `A-HE-PROJ-ACT-INV-001`
@@ -41,7 +42,7 @@ This v0.1 spec chooses modular aliasing. Later variants may define a cutoff mode
 
 ## 3. Finite frequency group
 
-Fix a positive integer `M >= 1`. Define the finite cyclic frequency group:
+Fix a positive integer `M >= 2`. Define the finite cyclic frequency group:
 
 ```text
 G_M := Z / MZ
@@ -61,11 +62,13 @@ V_M := C^{G_M}
 
 be the finite coefficient space with basis vectors `e_m` indexed by `m in G_M`.
 
-All modes are interpreted modulo `M`. If an integer frequency `r in Z` is generated, its finite representative is:
+For an integer `r in Z`, write:
 
 ```text
-alias_M(r) := r mod M in G_M
+[r]_M
 ```
+
+for its residue class in `G_M`. This is the v0.1 aliasing map. In code-oriented contexts this is the same operation previously written `alias_M(r)`.
 
 ## 4. Activation dictionary and Fourier coefficients
 
@@ -107,7 +110,7 @@ b_i in R / 2piZ
 For v0.1, weights are restricted to integers so that frequency routing is a well-defined endomorphism of the finite cyclic frequency group:
 
 ```text
-m -> w_i m mod M
+m -> [w_i m]_M
 ```
 
 Noninteger weights are out of scope for v0.1. They require interpolation, non-lattice frequency models, or a continuous Fourier transform formulation.
@@ -148,36 +151,30 @@ Suppose the incoming carrier at layer `i` has finite mode:
 m_{i-1} in G_M
 ```
 
-The layer preactivation has routed carrier:
+The activation harmonic `n_i in N_i` and integer weight `w_i` generate output mode:
 
 ```text
-w_i m_{i-1} mod M
-```
-
-The activation harmonic `n in N_i` generates output frequency:
-
-```text
-m_i = alias_M(n w_i m_{i-1})
+m_i = [n_i w_i m_{i-1}]_M
 ```
 
 Thus the v0.1 routing relation is:
 
 ```text
-m_{i-1} --(i,n)--> m_i
+m_{i-1} --(i,n_i,w_i)--> m_i
 iff
-m_i = alias_M(n w_i m_{i-1})
+m_i = [n_i w_i m_{i-1}]_M
 ```
 
 The magnitude of this transfer is:
 
 ```text
-T_i[m_i | m_{i-1}, n] := |phihat_i(n)|
+T_i[m_i | m_{i-1}, n_i] := |phihat_i(n_i)|
 ```
 
 when the routing equation holds, and:
 
 ```text
-T_i[m_i | m_{i-1}, n] := 0
+T_i[m_i | m_{i-1}, n_i] := 0
 ```
 
 otherwise.
@@ -191,7 +188,7 @@ T_i[m_i | q_i]
 where here:
 
 ```text
-q_i = (m_{i-1}, n)
+q_i = (m_{i-1}, n_i)
 ```
 
 This is a single-carrier harmonic-routing law. It is not a full nonlinear coefficient-convolution law for arbitrary superpositions. It is the v0.1 finite routing model.
@@ -210,16 +207,16 @@ with vertices `G_M` and directed edges:
 m_{i-1} -> m_i
 ```
 
-labeled by harmonic `n` whenever:
+labeled by harmonic `n_i` whenever:
 
 ```text
-m_i = alias_M(n w_i m_{i-1})
+m_i = [n_i w_i m_{i-1}]_M
 ```
 
 The edge weight is:
 
 ```text
-edge_weight_i(m_{i-1}, n, m_i) = |phihat_i(n)|
+edge_weight_i(m_{i-1}, n_i, m_i) = |phihat_i(n_i)|
 ```
 
 A depth-`d` routing pattern is a path through the layer graphs:
@@ -398,7 +395,7 @@ Real(r)
 as the set of network parameterizations `Theta` satisfying all routing equations:
 
 ```text
-m_i = alias_M(n_i w_i m_{i-1}) for i=1,...,d
+m_i = [n_i w_i m_{i-1}]_M for i=1,...,d
 ```
 
 and all declared dictionary/truncation conditions:
@@ -482,7 +479,7 @@ n_1 = 1
 Then:
 
 ```text
-m_1 = alias_8(1 * 1 * 1) = 1
+m_1 = [1 * 1 * 1]_8 = 1
 ```
 
 The transfer amplitude is:
@@ -535,7 +532,7 @@ B_1^T = 1/2
 If the target is mode `3` and input mode is `1`, the route uses harmonic `n=3`:
 
 ```text
-m_1 = alias_8(3 * 1 * 1) = 3
+m_1 = [3 * 1 * 1]_8 = 3
 ```
 
 The target amplitude is:
@@ -580,7 +577,7 @@ Under a hard cutoff convention with finite band `K_8 = {0,1,...,7}`, the raw gen
 Under the v0.1 modular aliasing convention:
 
 ```text
-m_1 = alias_8(15) = 7
+m_1 = [15]_8 = 7
 ```
 
 Thus the same generated harmonic is retained as finite mode `7`, with amplitude:
@@ -633,9 +630,9 @@ If no invariance proof is supplied, the theorem is convention-conditional.
 
 ## 24. Threshold characterization theorem for v0.1
 
-This section states the structural characterization supported by the v0.1 routing law. It is conditional on the modeling choices above.
+This section gives the canonical v0.1.1 proof form for the structural characterization supported by the v0.1 routing law. It is conditional on the modeling choices above.
 
-### 24.1 Additional source convention
+### 24.1 Source support
 
 The target-mode question is not meaningful unless the allowed source modes are declared. Therefore define a source support:
 
@@ -651,180 +648,236 @@ S_0 = G_M
 
 That default can make reachability less informative because the source mode may already lie in a favorable residue class. Downstream threshold claims should state the source support explicitly.
 
-### 24.2 Harmonic coefficient threshold set
+### 24.2 Threshold-clearing harmonic products
 
-For each layer, define:
-
-```text
-a_i(n) := |phihat_i(n)|
-```
-
-For threshold `epsilon > 0`, define the harmonic tuple set:
+For threshold `epsilon > 0`, define:
 
 ```text
 H_epsilon
   := { (n_1,...,n_d) in N_1 x ... x N_d : product_i a_i(n_i) >= epsilon }
 ```
 
-Each tuple `n = (n_1,...,n_d)` has a harmonic product residue:
+Define the harmonic product residue set:
 
 ```text
-h(n) := alias_M(product_i n_i)
-```
-
-Let:
-
-```text
-HProd_epsilon := { h(n) : n in H_epsilon } subset G_M
+HProd_epsilon
+  := { [product_i n_i]_M : (n_1,...,n_d) in H_epsilon } subset G_M
 ```
 
 This is the set of harmonic product residues whose coefficient product clears threshold.
 
-### 24.3 Contraction-admissible weight-product residues
+### 24.3 Contraction-admissible weight products
 
-Let:
+Define the contraction factor directly:
 
 ```text
+C_Lip(w_1,...,w_d)
+  := L_S (product_i |w_i| L_phi_i) delta(K)
+```
+
+Define the nonzero contraction-admissible weight tuples by:
+
+```text
+W_adm^nz
+  := { (w_1,...,w_d) in Z^d : w_i != 0 for all i, C_Lip(w_1,...,w_d) < 1 }
+```
+
+If:
+
+```text
+L_S delta(K) product_i L_phi_i > 0
+```
+
+then this is equivalently:
+
+```text
+product_i |w_i| < kappa,
 kappa := 1 / (L_S delta(K) product_i L_phi_i)
 ```
 
-when the denominator is positive. Then the contraction condition:
+The direct definition by `C_Lip < 1` is primary because it also handles edge cases where the reciprocal formula for `kappa` is not meaningful.
+
+Define:
 
 ```text
-L_S (product_i |w_i| L_phi_i) delta(K) < 1
+WProd_adm^nz
+  := { [product_i w_i]_M : (w_1,...,w_d) in W_adm^nz } subset G_M
 ```
 
-is equivalent to:
+### 24.4 Modular product sets
+
+For subsets `A,B subset G_M`, define:
 
 ```text
-product_i |w_i| < kappa
+A · B := { [ab]_M : a in A, b in B }
 ```
 
-Define the v0.1 integer-weight admissible set:
+### 24.5 Effective bandwidth set
 
-```text
-W_adm(kappa)
-  := { (w_1,...,w_d) in Z^d : product_i |w_i| < kappa }
-```
-
-For a nondegenerate representation path, one may additionally require:
-
-```text
-w_i != 0 for all i
-```
-
-The zero-weight case is degenerate: once some `w_i=0`, downstream routing collapses to mode `0`. This may be useful for constant outputs, but it should not be counted as nontrivial spectral reach.
-
-Define the contraction-admissible weight-product residue set:
-
-```text
-WProd_adm(kappa)
-  := { alias_M(product_i w_i) : (w_1,...,w_d) in W_adm(kappa) } subset G_M
-```
-
-and the nondegenerate variant:
-
-```text
-WProd_adm^nz(kappa)
-  := { alias_M(product_i w_i) : (w_1,...,w_d) in W_adm(kappa), w_i != 0 for all i }
-```
-
-### 24.4 Multiplicative product-set characterization
-
-Under the v0.1 routing law:
-
-```text
-m_i = alias_M(n_i w_i m_{i-1})
-```
-
-By induction over depth:
-
-```text
-m_d = alias_M(m_0 product_i n_i product_i w_i)
-```
-
-Therefore thresholded effective bandwidth is characterized by modular product sets.
-
-### 24.5 Theorem — v0.1 thresholded reachability characterization
-
-Fix the v0.1 mode-composition law, finite cyclic group `G_M`, depth `d`, source support `S_0`, activation harmonic sets `N_i`, coefficient magnitudes `a_i`, and contraction parameter `kappa`. For nondegenerate integer weights, the thresholded effective-bandwidth set is:
+Define:
 
 ```text
 B_eff^nz(epsilon; M,d,S_0)
-  = S_0 · HProd_epsilon · WProd_adm^nz(kappa)
 ```
 
-where product denotes pointwise multiplication in the finite ring `Z/MZ`:
+to be the set of terminal modes `m in G_M` for which there exist:
 
 ```text
-A · B := { alias_M(ab) : a in A, b in B }
+m_0 in S_0,
+(n_1,...,n_d) in N_1 x ... x N_d,
+(w_1,...,w_d) in W_adm^nz
 ```
 
-Equivalently, a target mode `m in G_M` lies in `B_eff^nz(epsilon;M,d,S_0)` iff there exist:
+such that the v0.1 recurrence:
+
+```text
+m_i = [n_i w_i m_{i-1}]_M
+```
+
+produces terminal mode `m_d = m`, and:
+
+```text
+product_i a_i(n_i) >= epsilon.
+```
+
+### 24.6 Theorem — v0.1 thresholded reachability characterization
+
+Under the v0.1 mode-composition law:
+
+```text
+B_eff^nz(epsilon; M,d,S_0)
+  = S_0 · HProd_epsilon · WProd_adm^nz.
+```
+
+Equivalently, `m in G_M` is threshold-reachable iff there exist:
 
 ```text
 m_0 in S_0,
 (n_1,...,n_d) in H_epsilon,
-(w_1,...,w_d) in W_adm(kappa) with all w_i != 0
+(w_1,...,w_d) in W_adm^nz
 ```
 
 such that:
 
 ```text
-m = alias_M(m_0 product_i n_i product_i w_i)
+m = [m_0 product_i n_i product_i w_i]_M.
 ```
 
-If zero-weight degenerate paths are allowed, replace `WProd_adm^nz(kappa)` by `WProd_adm(kappa)`.
+### 24.7 Proof
 
-### 24.6 Proof
-
-For any valid v0.1 routed path, each layer satisfies:
+First prove the path-collapse identity. For any routed path satisfying:
 
 ```text
-m_i = alias_M(n_i w_i m_{i-1})
+m_i = [n_i w_i m_{i-1}]_M,
 ```
 
-Applying the recurrence gives:
+we claim:
 
 ```text
-m_d = alias_M(m_0 n_1 w_1 n_2 w_2 ... n_d w_d)
+m_d = [m_0 product_i n_i product_i w_i]_M.
 ```
 
-Since multiplication in `Z/MZ` is commutative and associative:
+For `d=1`, this is exactly the routing law:
 
 ```text
-m_d = alias_M(m_0 product_i n_i product_i w_i)
+m_1 = [n_1 w_1 m_0]_M.
 ```
 
-The routed amplitude, ignoring the target mask because this theorem asks which terminal modes are reachable above threshold, is:
+Assume the identity holds through depth `j`:
 
 ```text
-product_i a_i(n_i)
+m_j = [m_0 product_{i=1}^j n_i product_{i=1}^j w_i]_M.
 ```
 
-Thus the amplitude condition `>= epsilon` is exactly `(n_1,...,n_d) in H_epsilon`, and the contraction condition is exactly `(w_1,...,w_d) in W_adm(kappa)` when the denominator defining `kappa` is positive.
-
-Therefore every threshold-admissible routed path lands in:
+Then by the routing law:
 
 ```text
-S_0 · HProd_epsilon · WProd_adm^nz(kappa)
+m_{j+1} = [n_{j+1} w_{j+1} m_j]_M.
 ```
 
-Conversely, if:
+The quotient map `Z -> Z/MZ` commutes with multiplication, so substituting the induction hypothesis gives:
 
 ```text
-m in S_0 · HProd_epsilon · WProd_adm^nz(kappa)
+m_{j+1}
+  = [m_0 product_{i=1}^{j+1} n_i product_{i=1}^{j+1} w_i]_M.
 ```
 
-then by definition there exist `m_0`, a harmonic tuple clearing threshold, and a nonzero integer-weight tuple satisfying contraction whose product routes to `m`.
+Thus the path-collapse identity holds by induction.
 
-This converse uses a load-bearing independence property of the v0.1 single-carrier routing law: the harmonic index `n_i` and the integer weight `w_i` at each layer are independently selectable. The dictionary fixes the admissible harmonic set `N_i`; the contraction constraint restricts only the product of the weight magnitudes; and v0.1 imposes no per-layer constraint coupling a selected harmonic `n_i` to a selected weight `w_i` beyond the routing equation itself. Since both tuples have the same fixed depth `d`, any harmonic tuple `(n_1,...,n_d)` and any admissible weight tuple `(w_1,...,w_d)` co-deploy into a valid routed path.
+Now prove the forward inclusion. Let:
 
-Applying the v0.1 recurrence to that co-deployed tuple realizes the product residue `m`. Hence `m` is in the thresholded effective-bandwidth set.
+```text
+m in B_eff^nz(epsilon; M,d,S_0).
+```
+
+Then there exists a routed path with source `m_0 in S_0`, harmonic tuple `(n_i)`, nonzero contraction-admissible weight tuple `(w_i)`, and terminal mode `m_d=m`, such that:
+
+```text
+product_i a_i(n_i) >= epsilon.
+```
+
+Therefore `(n_1,...,n_d) in H_epsilon`, so:
+
+```text
+[product_i n_i]_M in HProd_epsilon.
+```
+
+Also `(w_1,...,w_d) in W_adm^nz`, so:
+
+```text
+[product_i w_i]_M in WProd_adm^nz.
+```
+
+By the path-collapse identity:
+
+```text
+m = [m_0 product_i n_i product_i w_i]_M.
+```
+
+Hence:
+
+```text
+m in S_0 · HProd_epsilon · WProd_adm^nz.
+```
+
+Now prove the reverse inclusion. Let:
+
+```text
+m in S_0 · HProd_epsilon · WProd_adm^nz.
+```
+
+Then there exist `m_0 in S_0`, a harmonic product residue from some tuple `(n_1,...,n_d) in H_epsilon`, and a weight product residue from some tuple `(w_1,...,w_d) in W_adm^nz`, such that:
+
+```text
+m = [m_0 product_i n_i product_i w_i]_M.
+```
+
+The key independence property is specific to v0.1. The harmonic choices `n_i` and weight choices `w_i` are independently selectable at each layer. The retained harmonic set `N_i` is fixed by the activation dictionary. The contraction condition constrains only the product of the weight magnitudes. No v0.1 rule couples the admissibility of `n_i` to the chosen `w_i`, beyond the routing equation determining the next mode. Since both tuples have the same fixed depth `d`, the harmonic tuple and weight tuple co-deploy layer-by-layer.
+
+Define a routed path recursively by:
+
+```text
+m_i = [n_i w_i m_{i-1}]_M.
+```
+
+This path is valid by construction. Its harmonic tuple lies in `H_epsilon`, so its coefficient product is at least `epsilon`. Its weight tuple lies in `W_adm^nz`, so it is contraction-admissible and nondegenerate. By the path-collapse identity, its terminal mode is exactly `m`. Therefore:
+
+```text
+m in B_eff^nz(epsilon; M,d,S_0).
+```
+
+Both inclusions hold, so:
+
+```text
+B_eff^nz(epsilon; M,d,S_0)
+  = S_0 · HProd_epsilon · WProd_adm^nz.
+```
+
+This proves the theorem.
 
 This independence is specific to v0.1. It may fail in a multi-index intermodulation law where harmonic admissibility depends on the routed carrier or where parent-pattern constraints couple `n_i` and `w_i`.
 
-### 24.7 What this theorem closes
+### 24.8 What this theorem closes
 
 This closes the v0.1 structural characterization of thresholded reachability. It is stronger than a bounded enumeration procedure: it gives an if-and-only-if product-set condition.
 
@@ -833,10 +886,10 @@ The comparison problem is no longer merely “run finite search” under v0.1. I
 ```text
 compute the modular product set generated by source support,
 threshold-clearing harmonic products,
-and contraction-admissible weight products
+and contraction-admissible weight products.
 ```
 
-### 24.8 What remains open
+### 24.9 What remains open
 
 This theorem is conditional on v0.1 modeling choices and does not prove convention-invariance. Open items remain:
 
@@ -844,26 +897,26 @@ This theorem is conditional on v0.1 modeling choices and does not prove conventi
 1. compare modular aliasing with hard cutoff and remainder tracking;
 2. handle noninteger weights;
 3. handle full multi-index intermodulation instead of single-carrier routing;
-4. characterize WProd_adm(kappa) in closed form for arbitrary M and kappa;
+4. characterize WProd_adm^nz in closed form for arbitrary M and contraction data;
 5. characterize product sets over composite M beyond enumeration;
 6. add phase-sensitive cancellation if complex phases matter;
 7. connect this activation-routing theorem to the May 12 eigenbasis / unitary / gate geometry, if desired.
 ```
 
-### 24.9 Useful corollaries
+### 24.10 Useful corollaries
 
 #### Prime modulus corollary
 
-If `M=p` is prime and zero modes are excluded, then all nonzero modes lie in the multiplicative group `F_p^*`. If `S_0`, `HProd_epsilon`, and `WProd_adm^nz(kappa)` are subsets of `F_p^*`, then:
+If `M=p` is prime and zero modes are excluded, then all nonzero modes lie in the multiplicative group `F_p^*`. If `S_0`, `HProd_epsilon`, and `WProd_adm^nz` are subsets of `F_p^*`, then:
 
 ```text
 B_eff^nz(epsilon;p,d,S_0)
-  = S_0 HProd_epsilon WProd_adm^nz(kappa)
+  = S_0 HProd_epsilon WProd_adm^nz
 ```
 
 inside the group `F_p^*`.
 
-If the subgroup generated by `HProd_epsilon` and `WProd_adm^nz(kappa)` is all of `F_p^*`, then each source mode reaches its full multiplicative coset; if `S_0` contains one nonzero element, the reachable set is that source element times the generated subgroup.
+If the subgroup generated by `HProd_epsilon` and `WProd_adm^nz` is all of `F_p^*`, then each source mode reaches its full multiplicative coset; if `S_0` contains one nonzero element, the reachable set is that source element times the generated subgroup.
 
 This corollary concerns the ring/group structure of `Z/pZ` when the truncation modulus `M=p` is prime. It is not a statement about prime numbers, prime gaps, Jacobsthal phenomena, or the Heller-Winters prime program.
 
@@ -871,7 +924,7 @@ This corollary concerns the ring/group structure of `Z/pZ` when the truncation m
 
 For composite `M`, nonzero residues are not all units. Multiplication can move modes into different gcd strata. A sharper characterization can be obtained prime-power factor by prime-power factor using the Chinese remainder theorem, but that refinement is not part of v0.1.
 
-### 24.10 Fixture D — threshold product-set check
+### 24.11 Fixture D — threshold product-set check
 
 Let:
 
@@ -883,7 +936,7 @@ phi(t) = sin(t) + alpha sin(3t),
 0 < |alpha| < 1,
 N_1 = {1,3},
 w_1 in {1},
-kappa > 1
+C_Lip(w_1) < 1.
 ```
 
 If:
@@ -898,7 +951,7 @@ then:
 H_epsilon = {1,3},
 HProd_epsilon = {1,3},
 WProd_adm^nz = {1},
-B_eff^nz = {1,3}
+B_eff^nz = {1,3}.
 ```
 
 If:
@@ -913,7 +966,7 @@ then:
 H_epsilon = {1},
 HProd_epsilon = {1},
 WProd_adm^nz = {1},
-B_eff^nz = {1}
+B_eff^nz = {1}.
 ```
 
 This fixture shows that the effective bandwidth threshold is governed by coefficient decay: the third harmonic is reachable as a route, but it disappears from `B_eff` when the threshold exceeds its Fourier coefficient magnitude.

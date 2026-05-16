@@ -30,10 +30,22 @@ class TestHEProjActInv001(unittest.TestCase):
         text = DOC.read_text(encoding="utf-8")
         self.assertIn("Theorem — v0.1 thresholded reachability characterization", text)
         self.assertIn("B_eff^nz(epsilon; M,d,S_0)", text)
-        self.assertIn("S_0 · HProd_epsilon · WProd_adm^nz(kappa)", text)
+        self.assertIn("S_0 · HProd_epsilon · WProd_adm^nz", text)
         self.assertIn("load-bearing independence property", text)
         self.assertIn("multi-index intermodulation", text)
         self.assertIn("specific to v0.1", text)
+
+    def test_v011_proof_uses_quotient_notation_and_primary_contraction_admissibility(self) -> None:
+        text = DOC.read_text(encoding="utf-8")
+        self.assertIn("Proof form: v0.1.1 canonical proof refinement", text)
+        self.assertIn("write:", text)
+        self.assertIn("[r]_M", text)
+        self.assertIn("m_i = [n_i w_i m_{i-1}]_M", text)
+        self.assertIn("The quotient map `Z -> Z/MZ` commutes with multiplication", text)
+        self.assertIn("W_adm^nz", text)
+        self.assertIn("C_Lip(w_1,...,w_d) < 1", text)
+        self.assertIn("The direct definition by `C_Lip < 1` is primary", text)
+        self.assertNotIn("W_adm(kappa)\n  :=", text)
 
     def test_aliasing_fixture_really_separates_from_cutoff(self) -> None:
         text = DOC.read_text(encoding="utf-8")
@@ -41,7 +53,7 @@ class TestHEProjActInv001(unittest.TestCase):
         self.assertIn("r = n_1 w_1 m_0 = 5 * 1 * 3 = 15", text)
         self.assertIn("hard cutoff: route dropped", text)
         self.assertIn("modular aliasing: route reaches mode 7", text)
-        self.assertIn("alias_8(15) = 7", text)
+        self.assertIn("m_1 = [15]_8 = 7", text)
 
     def test_prime_modulus_nonclaim_is_present(self) -> None:
         text = DOC.read_text(encoding="utf-8")
