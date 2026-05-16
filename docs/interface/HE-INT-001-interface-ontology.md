@@ -15,6 +15,7 @@ Accordingly:
 
 - `HE-INT-001` is active and load-bearing for typed access-chain vocabulary.
 - `HE-FND-*` is withdrawn as a separate namespace.
+- HE-FND-* is withdrawn; cite `HE-INT-001` for foundational interface vocabulary.
 - Future foundational Heller-Einstein content should extend `HE-INT-*`, `HE-PROJ-*`, `HE-PHYS-*`, `HE-PLC-*`, or `HE-MTH-*` as appropriate.
 
 ## Typed access chain
