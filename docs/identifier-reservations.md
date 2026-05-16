@@ -4,7 +4,11 @@ Status: namespace reservation and governance record.
 
 ## Active identifiers
 
-No positive `HE-*` content identifiers are active in this bootstrap PR. This PR establishes the namespace, anti-seed register, provenance record, dependency discipline, and scaffold.
+| Identifier | Role | Path |
+|---|---|---|
+| `HE-PROJ-001` | Projection-induced Markov kernel theorem | `docs/projection/HE-PROJ-001-projection-induced-stochasticity.md` |
+| `HE-EX-001` | Discrete phase cycle on `Z_12` with two-cell trace and kernel `[[2/3,1/3],[1/3,2/3]]` | `docs/examples/HE-EX-001-discrete-phase-cycle.md` |
+| `HE-EX-002` | Continuous phase flow on `S^1` with matched kernel | `docs/examples/HE-EX-002-continuous-phase-flow.md` |
 
 ## Reserved identifiers
 
@@ -29,10 +33,11 @@ No positive `HE-*` content identifiers are active in this bootstrap PR. This PR 
 
 | Identifier | Role | Status |
 |---|---|---|
-| `HE-PROJ-001` | Projection-induced Markov kernel theorem | reserved |
+| `HE-PROJ-001` | Projection-induced Markov kernel theorem | active |
 | `HE-PROJ-002` | Sufficiency hierarchy | reserved |
 | `HE-PROJ-003` | Semantic right-inverse criterion | reserved |
 | `HE-PROJ-004..010` | Reserved | future |
+| `HE-PROJ-INV-001` | Inverse problem: characterize latent deterministic realizations of an observed Markov kernel up to equivalence | reserved |
 
 ### HE-PHYS-* — Conservative physical core
 
@@ -55,8 +60,8 @@ No positive `HE-*` content identifiers are active in this bootstrap PR. This PR 
 
 | Identifier | Role | Status |
 |---|---|---|
-| `HE-EX-001` | Discrete phase cycle on `Z_12` with two-cell trace and kernel `[[2/3,1/3],[1/3,2/3]]` | reserved |
-| `HE-EX-002` | Continuous phase flow on `S^1` with matched kernel | reserved |
+| `HE-EX-001` | Discrete phase cycle on `Z_12` with two-cell trace and kernel `[[2/3,1/3],[1/3,2/3]]` | active |
+| `HE-EX-002` | Continuous phase flow on `S^1` with matched kernel | active |
 | `HE-EX-003..005` | Standards-grounded interface examples | future |
 
 ### HE-MTH-* — Methodology
