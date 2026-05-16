@@ -311,9 +311,8 @@ Those are reserved for `HE-PROJ-TASK-001`. Any future task-tier contraction theo
 
 ## Boundaries
 
-This document does not:
+This document does not derive quantum mechanics. It also does not:
 
-- derive quantum mechanics;
 - derive the Born rule;
 - assert that semantic stability implies task stability;
 - assert that semantic holography implies microstate reconstruction;
