@@ -118,7 +118,7 @@ Every countable Markov dynamics admits a deterministic latent realization throug
 
 Equivalently: from the existence of an observed Markov kernel alone, one cannot rule out deterministic substrate dynamics.
 
-## Anti-interpretation corollary
+## Anti-interpretation corollary — Universal realizability is not explanation
 
 Theorem 1 is a universality result, not an explanatory result. Since every countable Markov kernel is realizable, deterministic-substrate existence alone explains no special structure of the observed kernel.
 
