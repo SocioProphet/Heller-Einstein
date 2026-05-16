@@ -1,4 +1,4 @@
-# Heller-Einstein Anti-Seed Register v1.6
+# Heller-Einstein Anti-Seed Register v1.7
 
 Heller-Einstein operates downstream of Heller-Godel framework anti-seed and PFK anti-seed. The entries below are Einstein-Heller-scaffold-specific extensions.
 
@@ -81,6 +81,16 @@ Failure mode: citing the multi-layer Lipschitz product as if it proves a depth-m
 Correct statement: the active theorem is a stability theorem. Spectral attainability requires a separate dictionary-specific analysis of harmonic generation, support propagation, amplitudes, weights, and out-of-sample validation. That frontier is reserved as `HE-PROJ-ACT-INV-001`.
 
 Closure condition: this entry remains active until a successor theorem proves a precise spectral-attainability result under explicit activation-dictionary and representation-norm hypotheses.
+
+## A-HE-PROJ-ACT-INV-001 — v0.1 routing law is not canonical spectral attainability
+
+`HE-PROJ-ACT-INV-001` v0.1 defines a finite cyclic Fourier mode-composition law with modular aliasing, integer weights, and single-carrier routing. The v0.1 thresholded reachability characterization is theorem-grade only conditional on those modeling choices.
+
+Failure mode: citing the v0.1 modular-product reachability theorem as if it proves general spectral attainability for activation networks, convention-invariant bandwidth behavior, a hard-cutoff or remainder-tracking result, noninteger-weight behavior, full multi-index intermodulation, prime-sequence representation, prime-gap structure, or any Heller-Winters prime-program theorem.
+
+Correct statement: v0.1 proves a real if-and-only-if modular product-set characterization inside a chosen finite aliasing model. It does not prove that the aliasing convention is canonical. Downstream claims must cite it as `conditional on HE-PROJ-ACT-INV-001 mode-composition law v0.1` unless they provide a separate convention-invariance theorem.
+
+Closure condition: this entry remains active until a successor theorem compares modular aliasing with hard cutoff, reflection aliasing, and remainder tracking, or otherwise proves that the downstream conclusion is invariant under the relevant routing conventions.
 
 ## A-HE-PHYS-001 — Conservative core is not Standard Model derivation
 
