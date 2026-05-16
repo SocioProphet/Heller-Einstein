@@ -100,9 +100,11 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
             self.assertIn(prefix, text)
         self.assertIn("HE-INT-001", text)
         self.assertIn("HE-PROJ-001", text)
+        self.assertIn("HE-PROJ-002", text)
         self.assertIn("HE-EX-001", text)
         self.assertIn("HE-EX-002", text)
         self.assertIn("HE-PROJ-INV-001", text)
+        self.assertIn("HE-PROJ-TASK-001", text)
         self.assertIn("HE-FND-* — withdrawn", text)
         self.assertNotIn("| `HE-FND-001`", text)
 
@@ -129,6 +131,17 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
         self.assertIn("Temporal Mechanics v0.24.1", theorem_text)
         self.assertIn("[[2/3, 1/3], [1/3, 2/3]]", ex1.read_text(encoding="utf-8"))
         self.assertIn("[[2/3, 1/3], [1/3, 2/3]]", ex2.read_text(encoding="utf-8"))
+
+    def test_sufficiency_hierarchy_exists(self) -> None:
+        path = ROOT / "docs" / "projection" / "HE-PROJ-002-sufficiency-hierarchy.md"
+        self.assertTrue(path.exists(), "HE-PROJ-002 sufficiency hierarchy missing")
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("HE-PROJ-002", text)
+        self.assertIn("microstate sufficiency implies semantic sufficiency", text)
+        self.assertIn("Converse failure: HE-EX-001 counterexample", text)
+        self.assertIn("Rate-distortion framing", text)
+        self.assertIn("HE-PROJ-TASK-001", text)
+        self.assertIn("does not derive quantum mechanics", text)
 
     def test_provenance_records_exist(self) -> None:
         v17 = ROOT / "docs" / "provenance" / "einstein-heller-v1_7.md"
