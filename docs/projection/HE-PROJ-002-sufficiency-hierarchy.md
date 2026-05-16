@@ -37,11 +37,11 @@ where:
 Assume distance functions or losses:
 
 ```text
-d_X : X x X -> R_{0}
-d_M : M_O x M_O -> R_{0}
+d_X : X x X -> R_{=0}
+d_M : M_O x M_O -> R_{=0}
 ```
 
-where the exact regularity assumptions are domain-specific. Metric, pseudometric, or loss-function variants are allowed when declared.
+where `R_{>=0}` denotes nonnegative real values. Metric, pseudometric, or loss-function variants are allowed when declared.
 
 Let `U subseteq X` be a declared evaluation domain.
 
@@ -108,8 +108,10 @@ A_O : M_O -> Z_O
 and a task loss:
 
 ```text
-L_task : Z_O x Z_O -> R_{0}
+L_task : Z_O x Z_O -> R_{=0}
 ```
+
+where `R_{>=0}` denotes nonnegative real values.
 
 The interface is task sufficient for `(A_O, L_task)` on `U` iff:
 
@@ -151,7 +153,7 @@ Therefore:
 S_O o tau_O o R_O o tau_O = S_O o tau_O on U
 ```
 
-which is semantic sufficiency. ∎
+which is semantic sufficiency. QED.
 
 ## Converse failure: HE-EX-001 counterexample
 
@@ -266,7 +268,7 @@ This is not physical AdS/CFT holography. It is an observer-relative information 
 For the uniform distribution on `X = Z_12`:
 
 ```text
-H(X) = log2(12) ≈ 3.585 bits
+H(X) = log2(12) approximately 3.585 bits
 ```
 
 The two-state trace `Y = {+, -}` is balanced, so:
@@ -278,7 +280,7 @@ H(Y) = 1 bit
 The conditional entropy is:
 
 ```text
-H(X | Y) = log2(6) ≈ 2.585 bits
+H(X | Y) = log2(6) approximately 2.585 bits
 ```
 
 The reconstruction above preserves semantics exactly:
@@ -297,12 +299,12 @@ This gives a concrete semantic holographic gap: the interface carries 1 bit of s
 
 ## Relationship to Temporal Mechanics v0.24.1
 
-Temporal Mechanics v0.24.1 §11 frames image / preimage discipline at substrate level. HE-PROJ-002 is the Heller-Einstein repository-level formalization of the sufficiency hierarchy for that discipline.
+Temporal Mechanics v0.24.1 Section 11 frames image / preimage discipline at substrate level. HE-PROJ-002 is the Heller-Einstein repository-level formalization of the sufficiency hierarchy for that discipline.
 
 Bibliographic citation:
 
 ```text
-Heller, Michael D. Temporal Mechanics and Emergence, v0.24.1 reconstructed editable source, 2026-05-08, §§11-12.
+Heller, Michael D. Temporal Mechanics and Emergence, v0.24.1 reconstructed editable source, 2026-05-08, Sections 11-12.
 ```
 
 This remains a bibliographic manuscript citation, not a repo-pinned upstream.
