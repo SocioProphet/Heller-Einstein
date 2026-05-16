@@ -112,6 +112,16 @@ The map `f` is measurable because it is piecewise measurable on the countable me
 
 This proves the theorem.
 
+## Canonical realization: see HE-PROJ-INV-003
+
+The skew product `X = Y x [0,1)` proved in this document establishes **existence**: every countable Markov kernel admits a deterministic realization.
+
+It is, however, **a realization, not the canonical one**. The skew product is non-unique even up to isomorphism: any measure-preserving rearrangement of the `[0,1)` factor yields a distinct triple inducing the same kernel.
+
+The canonical realization — the two-sided Markov shift, unique up to isomorphism within the class of invertible, measure-preserving, stationary, tau-generated realizations — is established in `HE-PROJ-INV-003`. For identifiability and structural purposes, the canonical realization is the Markov shift, not the skew product.
+
+This document's existence claim is unaffected and stands.
+
 ## Corollary 1 — Realizability is universal
 
 Every countable Markov dynamics admits a deterministic latent realization through a many-to-one trace map.
@@ -220,25 +230,6 @@ Open questions include:
 5. What additional constraints make the minimal realization canonical?
 
 This PR does not solve `HE-PROJ-INV-002`.
-
-## Reserved subproblem — HE-PROJ-INV-003 identifiability
-
-`HE-PROJ-INV-003` is reserved for identifiability.
-
-Two substrate quadruples are kernel-equivalent if they induce the same kernel `K` on `Y`.
-
-A necessary source of non-identifiability is fiberwise measure rearrangement: if `h_y : F_y -> F_y` is a measure-preserving automorphism on each fiber, then conjugating the latent dynamics by the `h_y` changes the internal substrate dynamics while leaving the induced kernel unchanged.
-
-Therefore the kernel sees only the distribution of target traces under `tau o f` on each fiber, not the internal arrangement of latent states inside the fiber.
-
-Open questions include:
-
-1. What equivalence relation on substrate quadruples is the correct one for identifiability?
-2. Is fiberwise measure-isomorphism plus pushdown compatibility sufficient for kernel-equivalence?
-3. What additional structure — topology, metric, semantics, task loss, or dynamics class — restores identifiability?
-4. Is there a canonical minimal representative in each kernel-equivalence class?
-
-This PR does not solve `HE-PROJ-INV-003`.
 
 ## Relationship to Temporal Mechanics v0.24.1
 
