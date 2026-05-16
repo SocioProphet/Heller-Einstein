@@ -2,28 +2,37 @@
 
 ## Upstream
 
+This repository consumes from two upstream framework repositories after HE-PROJ-001.
+
 | Repository | Commit SHA | Cited content |
 |---|---|---|
 | `SocioProphet/Heller-Godel` | `988307215ad38ccb16514311222184a1b757752b` | Framework objects (`HG-*`); PFK substrate (`PFK-*`); framework anti-seed (`A-HG-*`, `A-PFK-*`) |
+| `SocioProphet/Heller-Dirac` | `e1d7c863f4e0fc6e5e2ab485370cc75b2dba3993` | Heller-Dirac foundational reference surface (`HD-FND-*`); modular-flow cognate for HE-PROJ-*; Heller-Dirac anti-seed (`A-HD-*`) |
 
-Heller-Dirac is not yet a dependency. When `HE-*` content explicitly cites `HD-*` content, a follow-up PR will add `SocioProphet/Heller-Dirac` as a second upstream pin.
+Both pins are fixed. Re-pinning requires an explicit dependency PR.
 
 ## Cited objects
 
-### Framework-grade
+### From Heller-Godel @ `988307215ad38ccb16514311222184a1b757752b`
 
 | Identifier | Role |
 |---|---|
 | `HG-FND-*` | Foundational vocabulary |
 | `HG-MTH-005` | Universal Bridge formal specification, cited as a method-grade constraint applying analogously to `HE-*` content |
-
-### PFK operational substrate
-
-| Identifier | Role |
-|---|---|
 | `PFK-SCHEMA-001..004` | Standard schemas for future receipt emission |
 | `PFK-OP-001` | Event ingestion for future receipts |
 | `PFK-OP-030` | Calibration operator for future exemplar baselines |
+
+### From Heller-Dirac @ `e1d7c863f4e0fc6e5e2ab485370cc75b2dba3993`
+
+| Identifier | Role |
+|---|---|
+| `HD-FND-007` | Tomita-Takesaki modular operator and modular flow; structural cognate for trace-map induced observer-level evolution |
+| `HD-FND-008` | KMS condition; structural cognate for observer-relative equilibrium / induced stochasticity comparisons |
+| `A-HD-TM-001` | modular flow is not automatically physical time |
+| `A-HD-FND-001` | HD-FND identifiers are reference surface, not reproof |
+
+## Anti-seed surfaces
 
 ### Framework anti-seed
 
@@ -38,35 +47,36 @@ Heller-Dirac is not yet a dependency. When `HE-*` content explicitly cites `HD-*
 |---|---|
 | `A-PFK-OP-001` | operator invocation is not evidence |
 | `A-PFK-SCHEMA-001` | schema validity is not content validity |
-| `A-PFK-SCHEMA-002` | schema-version drift; pin is not floating |
+| `A-PFK-SCHEMA-002` | schema-version drift; pins are not floating |
 | `A-PFK-VAL-001` | validator green is not audit completion |
+
+### Heller-Dirac anti-seed
+
+| Identifier | Applies because |
+|---|---|
+| `A-HD-TM-001` | modular flow is not automatically physical time; modular-flow / trace-map-evolution comparison is method-grade only |
+| `A-HD-FND-001` | HD-FND identifiers are reference surface, not new Heller-Einstein claims |
 
 ## Forbidden edges
 
 - `Heller-Einstein` -> any Clay-program repo.
 - `Heller-Einstein` -> Heller-Godel-other-than-pinned-commit.
-- `Heller-Einstein` -> Heller-Dirac before an explicit dependency PR adds it.
+- `Heller-Einstein` -> Heller-Dirac-other-than-pinned-commit.
+- `Heller-Einstein` -> Heller-Dirac proof transfer. HE-PROJ-* and HD-TM-* are structurally cognate but mathematically distinct.
 
 ## Publisher contract
 
 Heller-Einstein publishes `HE-*` identifiers for downstream consumption when content needs typed-interface or projection-induced-stochasticity apparatus.
 
-Consumers cite Heller-Einstein at a pinned commit parallel to their Heller-Godel pin:
-
-```text
-[HE-INT-001 @ <heller-einstein-pin>]
-[HG-FND-001 @ 988307215ad38ccb16514311222184a1b757752b]
-```
-
-Pinned commits are not floating.
+Consumers cite Heller-Einstein at a pinned commit parallel to their Heller-Godel and Heller-Dirac pins when applicable.
 
 ## Citation form
 
 ```text
-[HE-INT-001 @ <merge-sha>]
 [HE-PROJ-001 @ <merge-sha>]
-[HE-PHYS-001 @ <merge-sha>]
-[HE-PLC-001 @ <merge-sha>]
 [HE-EX-001 @ <merge-sha>]
-[A-HE-INT-001 @ <merge-sha>]
+[HE-EX-002 @ <merge-sha>]
+[HD-FND-007 @ e1d7c863f4e0fc6e5e2ab485370cc75b2dba3993]
+[A-HE-PROJ-001 @ <merge-sha>]
+[A-HD-TM-001 @ e1d7c863f4e0fc6e5e2ab485370cc75b2dba3993]
 ```
