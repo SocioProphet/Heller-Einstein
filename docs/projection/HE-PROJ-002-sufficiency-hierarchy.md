@@ -37,8 +37,8 @@ where:
 Assume distance functions or losses:
 
 ```text
-d_X : X x X -> R_{=0}
-d_M : M_O x M_O -> R_{=0}
+d_X : X x X -> R_{>=0}
+d_M : M_O x M_O -> R_{>=0}
 ```
 
 where `R_{>=0}` denotes nonnegative real values. Metric, pseudometric, or loss-function variants are allowed when declared.
@@ -108,7 +108,7 @@ A_O : M_O -> Z_O
 and a task loss:
 
 ```text
-L_task : Z_O x Z_O -> R_{=0}
+L_task : Z_O x Z_O -> R_{>=0}
 ```
 
 where `R_{>=0}` denotes nonnegative real values.
