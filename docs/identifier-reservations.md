@@ -11,6 +11,7 @@ Status: namespace reservation and governance record.
 | `HE-PROJ-002` | Sufficiency hierarchy and semantic holography; microstate implies semantic sufficiency; converse counterexample; rate-distortion framing | `docs/projection/HE-PROJ-002-sufficiency-hierarchy.md` |
 | `HE-PROJ-003` | Metric-measure bridge for semantic stability; semantic pseudometric and Wasserstein contraction theorem | `docs/projection/HE-PROJ-003-metric-measure-bridge.md` |
 | `HE-PROJ-INV-001` | Markov kernel realizability theorem | `docs/projection/HE-PROJ-INV-001-markov-kernel-realizability.md` |
+| `HE-PROJ-INV-003` | Markov shift identifiability theorem for finite stationary observer-generated invertible realizations | `docs/projection/HE-PROJ-INV-003-markov-shift-identifiability.md` |
 | `HE-PHYS-001` | Conservative physical-core action; seven-sector microscopic action, minimal Einstein-Cartan torsion-elimination contact term, observer-interface term | `docs/physics/HE-PHYS-001-conservative-physical-core-action.md` |
 | `HE-EX-001` | Discrete phase cycle on `Z_12` with two-cell trace and kernel `[[2/3,1/3],[1/3,2/3]]` | `docs/examples/HE-EX-001-discrete-phase-cycle.md` |
 | `HE-EX-002` | Continuous phase flow on `S^1` with matched kernel | `docs/examples/HE-EX-002-continuous-phase-flow.md` |
@@ -44,7 +45,9 @@ Future content should cite `HE-INT-001` rather than `HE-FND-*` for typed access-
 | `HE-PROJ-004..010` | Reserved | future |
 | `HE-PROJ-INV-001` | Markov kernel realizability theorem | active |
 | `HE-PROJ-INV-002` | Minimal realization problem | reserved; open |
-| `HE-PROJ-INV-003` | Identifiability problem | reserved; open |
+| `HE-PROJ-INV-003` | Markov shift identifiability theorem | active |
+| `HE-PROJ-INV-004` | Countable-state stationary Markov-shift extension | reserved |
+| `HE-PROJ-INV-005` | Non-stationary / sigma-finite natural-extension problem | reserved |
 | `HE-PROJ-TASK-001` | Task-sufficiency lattice and task-family infimum structure | reserved |
 
 ### HE-PHYS-* — Conservative physical core
@@ -92,6 +95,7 @@ The following anti-seed identifiers are active in `docs/anti-seed-einstein.md`:
 | `A-HE-PROJ-002` | Sufficiency hierarchy tiers are distinct |
 | `A-HE-PROJ-003` | Universal realizability is not explanation |
 | `A-HE-PROJ-004` | Semantic stability is not task stability or microstate recovery |
+| `A-HE-PROJ-005` | Canonical Markov shift is not physical substrate uniqueness |
 | `A-HE-PHYS-001` | Conservative core is not Standard Model derivation |
 | `A-HE-PHYS-002` | Algebraic torsion is the minimal branch |
 | `A-HE-PHYS-003` | Boundary term completion depends on boundary data |
