@@ -11,7 +11,7 @@ Status: namespace reservation and governance record.
 | `HE-PROJ-002` | Sufficiency hierarchy and semantic holography; microstate implies semantic sufficiency; converse counterexample; rate-distortion framing | `docs/projection/HE-PROJ-002-sufficiency-hierarchy.md` |
 | `HE-PROJ-003` | Metric-measure bridge for semantic stability; semantic pseudometric and Wasserstein contraction theorem | `docs/projection/HE-PROJ-003-metric-measure-bridge.md` |
 | `HE-PROJ-INV-001` | Markov kernel realizability theorem | `docs/projection/HE-PROJ-INV-001-markov-kernel-realizability.md` |
-| `HE-PROJ-INV-003` | Markov shift identifiability theorem for finite stationary observer-generated invertible realizations | `docs/projection/HE-PROJ-INV-003-markov-shift-identifiability.md` |
+| `HE-PROJ-INV-003` | Identifiability via natural-extension uniqueness for finite `Y`; canonical Markov-shift realization | `docs/projection/HE-PROJ-INV-003-identifiability.md` |
 | `HE-PHYS-001` | Conservative physical-core action; seven-sector microscopic action, minimal Einstein-Cartan torsion-elimination contact term, observer-interface term | `docs/physics/HE-PHYS-001-conservative-physical-core-action.md` |
 | `HE-EX-001` | Discrete phase cycle on `Z_12` with two-cell trace and kernel `[[2/3,1/3],[1/3,2/3]]` | `docs/examples/HE-EX-001-discrete-phase-cycle.md` |
 | `HE-EX-002` | Continuous phase flow on `S^1` with matched kernel | `docs/examples/HE-EX-002-continuous-phase-flow.md` |
@@ -43,11 +43,11 @@ Future content should cite `HE-INT-001` rather than `HE-FND-*` for typed access-
 | `HE-PROJ-002` | Sufficiency hierarchy and semantic holography | active |
 | `HE-PROJ-003` | Metric-measure bridge for semantic stability | active |
 | `HE-PROJ-004..010` | Reserved | future |
-| `HE-PROJ-INV-001` | Markov kernel realizability theorem | active |
-| `HE-PROJ-INV-002` | Minimal realization problem | reserved; open |
-| `HE-PROJ-INV-003` | Markov shift identifiability theorem | active |
-| `HE-PROJ-INV-004` | Countable-state stationary Markov-shift extension | reserved |
-| `HE-PROJ-INV-005` | Non-stationary / sigma-finite natural-extension problem | reserved |
+| `HE-PROJ-INV-001` | Existence: every countable Markov kernel admits a deterministic realization (skew product) | active |
+| `HE-PROJ-INV-002` | Minimality: smallest finite realization; structure of `cx(K)` | reserved; genuinely open |
+| `HE-PROJ-INV-003` | Identifiability: natural-extension uniqueness for finite `Y` | active |
+| `HE-PROJ-INV-003-COUNTABLE` | Identifiability extension to countably-infinite `Y` without guaranteed stationary law | reserved; infinite-measure natural extensions |
+| `HE-PROJ-INV-004..010` | Reserved | future |
 | `HE-PROJ-TASK-001` | Task-sufficiency lattice and task-family infimum structure | reserved |
 
 ### HE-PHYS-* — Conservative physical core
