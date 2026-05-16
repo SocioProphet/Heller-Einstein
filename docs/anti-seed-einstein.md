@@ -1,4 +1,4 @@
-# Heller-Einstein Anti-Seed Register v1.1
+# Heller-Einstein Anti-Seed Register v1.2
 
 Heller-Einstein operates downstream of Heller-Godel framework anti-seed and PFK anti-seed. The entries below are Einstein-Heller-scaffold-specific extensions.
 
@@ -31,6 +31,16 @@ Correct statement: this does not derive quantum mechanics, the Born rule, noncom
 Microstate sufficiency, semantic sufficiency, and task sufficiency are distinct. Semantic holography is small semantic/task distortion with incomplete microstate reconstruction.
 
 Correct statement: microstate sufficiency implies semantic sufficiency; the converse fails. Task sufficiency is task-relative.
+
+## A-HE-PROJ-003 — Universal realizability is not explanation
+
+`HE-PROJ-INV-001` proves that every countable Markov kernel admits some deterministic latent realization through a many-to-one trace map. This universality means realizability alone has no explanatory force.
+
+Failure mode: citing deterministic-substrate realizability as if it explains why a particular observed kernel has its form, or as if it privileges one latent substrate over another.
+
+Correct statement: existence of a deterministic substrate is universal. Explanatory weight requires additional constraints such as minimality, identifiability, canonical fiber measures, physical admissibility, semantic compatibility, or task structure.
+
+Closure condition: this entry remains active unless a later theory supplies a canonical minimal or identifiable realization principle for the relevant class of kernels.
 
 ## A-HE-PHYS-001 — Conservative core is not Standard Model derivation
 
