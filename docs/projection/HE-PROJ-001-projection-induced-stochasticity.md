@@ -1,9 +1,22 @@
 # HE-PROJ-001 — Projection-Induced Stochasticity Theorem
 
 Identifier: `HE-PROJ-001`  
+Parent interface ontology: `HE-INT-001`  
 Distance tier: framework-method / theorem-specification  
-Status: active after this PR  
+Status: active  
 Anti-seed: `A-HE-PROJ-001`, `A-HE-PROJ-002`, `A-HE-MTH-001`
+
+## Parent ontology
+
+This theorem depends on `[HE-INT-001 @ <merge-sha>]` for:
+
+- latent or bulk state space `X`;
+- trace space `Y`;
+- trace map `tau : X -> Y`;
+- trace fiber `F_y = tau^{-1}(y)`;
+- the distinction between latent dynamics and observer-level traces.
+
+Bootstrap-time `HE-FND-*` reservations are withdrawn. Interface ontology is canonical under `HE-INT-001`.
 
 ## Statement
 

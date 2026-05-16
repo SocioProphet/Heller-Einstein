@@ -26,7 +26,6 @@ REQUIRED_A_HE = [
     "A-HE-MTH-001",
 ]
 REQUIRED_PREFIXES = [
-    "HE-FND-",
     "HE-INT-",
     "HE-PROJ-",
     "HE-PHYS-",
@@ -93,16 +92,28 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
         for entry in REQUIRED_A_HE:
             self.assertIn(entry, text)
 
-    def test_identifier_reservations_exist_and_proj_active(self) -> None:
+    def test_identifier_reservations_exist_and_namespace_clean(self) -> None:
         path = ROOT / "docs" / "identifier-reservations.md"
         self.assertTrue(path.exists())
         text = path.read_text(encoding="utf-8")
         for prefix in REQUIRED_PREFIXES:
             self.assertIn(prefix, text)
+        self.assertIn("HE-INT-001", text)
         self.assertIn("HE-PROJ-001", text)
         self.assertIn("HE-EX-001", text)
         self.assertIn("HE-EX-002", text)
         self.assertIn("HE-PROJ-INV-001", text)
+        self.assertIn("HE-FND-* — withdrawn", text)
+        self.assertNotIn("| `HE-FND-001`", text)
+
+    def test_interface_ontology_exists(self) -> None:
+        path = ROOT / "docs" / "interface" / "HE-INT-001-interface-ontology.md"
+        self.assertTrue(path.exists())
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("trace map", text)
+        self.assertIn("semantic lift", text)
+        self.assertIn("F_y := tau_O^{-1}(y)", text)
+        self.assertIn("HE-FND-* is withdrawn", text)
 
     def test_projection_theorem_and_fixtures_exist(self) -> None:
         theorem = ROOT / "docs" / "projection" / "HE-PROJ-001-projection-induced-stochasticity.md"
@@ -111,6 +122,7 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
         for path in [theorem, ex1, ex2]:
             self.assertTrue(path.exists(), f"missing HE projection artifact: {path}")
         theorem_text = theorem.read_text(encoding="utf-8")
+        self.assertIn("Parent interface ontology: `HE-INT-001`", theorem_text)
         self.assertIn("Markov kernel", theorem_text)
         self.assertIn("does not derive quantum mechanics", theorem_text)
         self.assertIn("HE-PROJ-INV-001", theorem_text)

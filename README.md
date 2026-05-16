@@ -20,20 +20,21 @@ Heller-Einstein is co-foundational with Heller-Godel and Heller-Dirac:
 
 Heller-Einstein consumes Heller-Godel for PFK substrate, framework objects, and claim-grade discipline. It publishes `HE-*` objects for downstream consumption when content needs typed-interface or projection-induced-stochasticity apparatus.
 
-Heller-Einstein does not depend on Heller-Dirac yet. If future `HE-*` content explicitly cites `HD-*` content, Heller-Dirac will be added as a second upstream pin using the dual-upstream pattern already established in `yang-mills` and `bsd-proof-program`.
+Heller-Einstein depends on Heller-Dirac after `HE-PROJ-001`, using the dual-upstream pattern established in `yang-mills` and `bsd-proof-program`. The Heller-Dirac citation is structural-cognate only; it does not transfer proof.
 
 ## Identifier namespace
 
 | Prefix | Domain |
 |---|---|
-| `HE-FND-*` | Foundational vocabulary |
-| `HE-INT-*` | Interface ontology |
+| `HE-INT-*` | Interface ontology and foundational typed access-chain vocabulary |
 | `HE-PROJ-*` | Projection-induced stochasticity |
 | `HE-PHYS-*` | Conservative physical core |
 | `HE-PLC-*` | Placeholder spaces |
 | `HE-EX-*` | Canonical exemplars |
 | `HE-MTH-*` | Methodology declarations |
 | `A-HE-*` | Anti-seed register |
+
+`HE-FND-*` was a bootstrap-time reservation and is now withdrawn. Heller-Einstein's foundational vocabulary is consolidated under `HE-INT-*`, with `HE-INT-001` as the active formal interface ontology specification.
 
 ## Non-claims
 
@@ -61,19 +62,19 @@ The v1.7 candidate is reconstructed from the rendered Drive artifact and is not 
 
 See `docs/provenance/einstein-heller-v1_7.md`.
 
+Temporal Mechanics v0.24.1 is cited bibliographically for the substrate-level image / preimage and projection discipline used by `HE-PROJ-001`; it is not a repo-pinned upstream.
+
 ## Status
 
-Bootstrap scaffold. No apparatus implementation. No receipts emitted. No downstream Clay-program consumer yet declares Heller-Einstein as upstream.
+Active co-foundational scaffold with the first projection theorem and interface ontology now canonicalized. No physical-action apparatus implemented yet. No receipts emitted. No downstream Clay-program consumer yet declares Heller-Einstein as upstream.
 
 Subsequent PRs will draft:
 
-1. `HE-INT-*` formal interface ontology;
-2. `HE-PROJ-*` projection-induced stochasticity theorem and exemplars;
-3. `HE-PHYS-*` conservative physical core;
-4. `HE-EX-001` discrete phase cycle fixture;
-5. `HE-EX-002` continuous phase flow fixture;
-6. `HE-FND-*` foundational vocabulary;
-7. structural-cognate cross-reference to Heller-Dirac when needed.
+1. `HE-PROJ-002` sufficiency hierarchy;
+2. `HE-PHYS-*` conservative physical core;
+3. `HE-PLC-001` typed placeholder-chain specification;
+4. `HE-MTH-001` structural-cognate map to Heller-Dirac;
+5. downstream consumer PRs when a Clay-program repo needs `HE-*` apparatus.
 
 ## License
 
