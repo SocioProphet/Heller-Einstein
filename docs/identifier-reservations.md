@@ -6,28 +6,29 @@ Status: namespace reservation and governance record.
 
 | Identifier | Role | Path |
 |---|---|---|
+| `HE-INT-001` | Formal interface ontology spec: typed access chain, trace maps, semantic lifts, reconstruction maps, latent fibers, semantic equivalence | `docs/interface/HE-INT-001-interface-ontology.md` |
 | `HE-PROJ-001` | Projection-induced Markov kernel theorem | `docs/projection/HE-PROJ-001-projection-induced-stochasticity.md` |
 | `HE-EX-001` | Discrete phase cycle on `Z_12` with two-cell trace and kernel `[[2/3,1/3],[1/3,2/3]]` | `docs/examples/HE-EX-001-discrete-phase-cycle.md` |
 | `HE-EX-002` | Continuous phase flow on `S^1` with matched kernel | `docs/examples/HE-EX-002-continuous-phase-flow.md` |
 
+## Withdrawn namespace
+
+### HE-FND-* — withdrawn / consolidated under HE-INT-*
+
+Bootstrap reserved `HE-FND-*` as a possible foundational-vocabulary namespace. This PR withdraws that split. Heller-Einstein's foundational vocabulary is the interface ontology, and it is now canonicalized under `HE-INT-001`.
+
+Future content should cite `HE-INT-001` rather than `HE-FND-*` for typed access-chain vocabulary, trace maps, semantic lifts, reconstruction maps, latent fibers, and observer-relative semantic equivalence.
+
 ## Reserved identifiers
-
-### HE-FND-* — Foundational vocabulary
-
-| Identifier | Role | Status |
-|---|---|---|
-| `HE-FND-001` | Typed access chain `X -> Y_O -> M_O` | reserved |
-| `HE-FND-002` | Observer-relative semantic equivalence | reserved |
-| `HE-FND-003` | Reconstruction map and latent fiber | reserved |
-| `HE-FND-004..010` | Reserved | future |
 
 ### HE-INT-* — Interface ontology
 
 | Identifier | Role | Status |
 |---|---|---|
-| `HE-INT-001` | Formal interface ontology spec | reserved |
-| `HE-INT-002` | Reconstruction structure and latent fibers | reserved |
-| `HE-INT-003..010` | Reserved | future |
+| `HE-INT-001` | Formal interface ontology spec | active |
+| `HE-INT-002` | Reconstruction refinements and admissible partial inverses beyond HE-INT-001 base definitions | reserved |
+| `HE-INT-003` | Observer comparison / inter-observer translation maps | reserved |
+| `HE-INT-004..010` | Reserved | future |
 
 ### HE-PROJ-* — Projection-induced stochasticity
 
