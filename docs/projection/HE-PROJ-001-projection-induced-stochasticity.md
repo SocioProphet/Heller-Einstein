@@ -119,9 +119,8 @@ Per `A-HD-TM-001`, modular flow is not automatically physical time. Per `A-HE-MT
 
 ## Boundaries
 
-This theorem does not:
+This theorem does not derive quantum mechanics. It also does not:
 
-- derive quantum mechanics;
 - derive the Born rule;
 - produce noncommuting observables;
 - produce Hilbert-space measurement theory;
