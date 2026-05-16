@@ -22,6 +22,7 @@ REQUIRED_A_HE = [
     "A-HE-PROJ-004",
     "A-HE-PROJ-005",
     "A-HE-PROJ-ACT-001",
+    "A-HE-PROJ-ACT-002",
     "A-HE-PHYS-001",
     "A-HE-PHYS-002",
     "A-HE-PHYS-003",
@@ -111,6 +112,7 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
         self.assertIn("HE-PROJ-ACT-002", text)
         self.assertIn("HE-PROJ-ACT-003", text)
         self.assertIn("HE-PROJ-ACT-004", text)
+        self.assertIn("HE-PROJ-ACT-INV-001", text)
         self.assertIn("HE-PROJ-INV-001", text)
         self.assertIn("HE-PROJ-INV-002", text)
         self.assertIn("HE-PROJ-INV-003", text)
@@ -177,6 +179,21 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
         self.assertIn("HE-PROJ-ACT-002", text)
         self.assertIn("HE-PROJ-ACT-003", text)
         self.assertIn("HE-PROJ-ACT-004", text)
+
+    def test_multilayer_activation_contraction_exists(self) -> None:
+        path = ROOT / "docs" / "projection" / "HE-PROJ-ACT-002-multilayer-activation-contraction.md"
+        self.assertTrue(path.exists(), "HE-PROJ-ACT-002 theorem document missing")
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("HE-PROJ-ACT-002", text)
+        self.assertIn("HE-PROJ-ACT-001", text)
+        self.assertIn("HE-PROJ-003", text)
+        self.assertIn("rho_d <= L_S", text)
+        self.assertIn("Lipschitz product", text)
+        self.assertIn("not Fourier-support bounds", text)
+        self.assertIn("does not", text)
+        self.assertIn("minimum depth", text)
+        self.assertIn("HE-PROJ-ACT-INV-001", text)
+        self.assertIn("A-HE-PROJ-ACT-002", text)
 
     def test_inverse_realizability_theorem_exists(self) -> None:
         path = ROOT / "docs" / "projection" / "HE-PROJ-INV-001-markov-kernel-realizability.md"
