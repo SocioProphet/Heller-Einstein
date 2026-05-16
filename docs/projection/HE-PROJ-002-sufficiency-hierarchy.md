@@ -311,9 +311,8 @@ This remains a bibliographic manuscript citation, not a repo-pinned upstream.
 
 ## Boundaries
 
-This document does not:
+This document does not derive quantum mechanics. It also does not:
 
-- derive quantum mechanics;
 - derive the Born rule;
 - claim semantic sufficiency implies microstate sufficiency;
 - formalize a full task-sufficiency lattice;
