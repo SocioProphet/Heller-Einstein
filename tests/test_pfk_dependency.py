@@ -20,6 +20,7 @@ REQUIRED_A_HE = [
     "A-HE-PROJ-002",
     "A-HE-PROJ-003",
     "A-HE-PROJ-004",
+    "A-HE-PROJ-005",
     "A-HE-PHYS-001",
     "A-HE-PHYS-002",
     "A-HE-PHYS-003",
@@ -108,6 +109,8 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
         self.assertIn("HE-PROJ-INV-001", text)
         self.assertIn("HE-PROJ-INV-002", text)
         self.assertIn("HE-PROJ-INV-003", text)
+        self.assertIn("HE-PROJ-INV-003-COUNTABLE", text)
+        self.assertIn("HE-PROJ-INV-004..010", text)
         self.assertIn("HE-PHYS-001", text)
         self.assertIn("HE-PHYS-002", text)
         self.assertIn("HE-EX-001", text)
@@ -160,10 +163,26 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
         self.assertIn("HE-PROJ-INV-001", text)
         self.assertIn("Countable Markov kernels are deterministically realizable", text)
         self.assertIn("X = Y x [0,1)", text)
+        self.assertIn("Canonical realization: see HE-PROJ-INV-003", text)
+        self.assertIn("a realization, not the canonical one", text)
         self.assertIn("Universal realizability is not explanation", text)
         self.assertIn("HE-PROJ-INV-002", text)
         self.assertIn("HE-PROJ-INV-003", text)
         self.assertIn("does not derive quantum mechanics", text)
+
+    def test_markov_shift_identifiability_theorem_exists(self) -> None:
+        path = ROOT / "docs" / "projection" / "HE-PROJ-INV-003-identifiability.md"
+        self.assertTrue(path.exists(), "HE-PROJ-INV-003 theorem document missing")
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("HE-PROJ-INV-003", text)
+        self.assertIn("two-sided Markov shift", text)
+        self.assertIn("tau-generated", text)
+        self.assertIn("Identifiability", text)
+        self.assertIn("HE-PROJ-INV-002", text)
+        self.assertIn("HE-PROJ-INV-003-COUNTABLE", text)
+        self.assertIn("does not", text)
+        self.assertIn("derive quantum mechanics", text)
+        self.assertIn("A-HE-PROJ-005", text)
 
     def test_sufficiency_hierarchy_exists(self) -> None:
         path = ROOT / "docs" / "projection" / "HE-PROJ-002-sufficiency-hierarchy.md"

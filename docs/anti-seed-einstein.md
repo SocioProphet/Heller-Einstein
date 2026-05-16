@@ -1,4 +1,4 @@
-# Heller-Einstein Anti-Seed Register v1.3
+# Heller-Einstein Anti-Seed Register v1.4
 
 Heller-Einstein operates downstream of Heller-Godel framework anti-seed and PFK anti-seed. The entries below are Einstein-Heller-scaffold-specific extensions.
 
@@ -51,6 +51,16 @@ Failure mode: citing semantic contraction as if it proves task success, action-p
 Correct statement: semantic stability is defined at the level of `d_sem(y,y') = d_M(S(y),S(y'))`. Task-tier claims require `HE-PROJ-TASK-001` primitives. Microstate reconstruction requires separate conditions from `HE-INT-*` / `HE-PROJ-002`.
 
 Closure condition: this entry remains active until task-tier and microstate-tier bridge theorems are separately proven and explicitly cited.
+
+## A-HE-PROJ-005 — Canonical Markov shift is not physical substrate uniqueness
+
+`HE-PROJ-INV-003` identifies the two-sided Markov shift as the canonical finite stationary observer-generated invertible realization of a Markov kernel. This is a measure-theoretic identifiability theorem inside a restricted realization class.
+
+Failure mode: citing `HE-PROJ-INV-003` as if it proves physical substrate uniqueness, rules out non-invertible realizations, rules out non-stationary realizations, or rules out hidden non-observer-generated bulk structure.
+
+Correct statement: identifiability holds only under the four stated hypotheses: invertibility, measure preservation, stationarity, and observer-generation. Outside that class, non-uniqueness remains. The theorem selects a canonical representative, not a physical substrate.
+
+Closure condition: this entry remains active unless a later physical-admissibility theory proves that the Markov-shift realization class is not merely canonical but physically forced.
 
 ## A-HE-PHYS-001 — Conservative core is not Standard Model derivation
 
