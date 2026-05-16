@@ -10,6 +10,7 @@ Status: namespace reservation and governance record.
 | `HE-PROJ-001` | Projection-induced Markov kernel theorem | `docs/projection/HE-PROJ-001-projection-induced-stochasticity.md` |
 | `HE-PROJ-002` | Sufficiency hierarchy and semantic holography; microstate implies semantic sufficiency; converse counterexample; rate-distortion framing | `docs/projection/HE-PROJ-002-sufficiency-hierarchy.md` |
 | `HE-PROJ-003` | Metric-measure bridge for semantic stability; semantic pseudometric and Wasserstein contraction theorem | `docs/projection/HE-PROJ-003-metric-measure-bridge.md` |
+| `HE-PROJ-ACT-001` | Periodic-activation representational bound; activation contraction bound; prime-wave falsification boundary | `docs/projection/HE-PROJ-ACT-001-periodic-activation-bound.md` |
 | `HE-PROJ-INV-001` | Markov kernel realizability theorem | `docs/projection/HE-PROJ-INV-001-markov-kernel-realizability.md` |
 | `HE-PROJ-INV-003` | Identifiability via natural-extension uniqueness for finite `Y`; canonical Markov-shift realization | `docs/projection/HE-PROJ-INV-003-identifiability.md` |
 | `HE-PHYS-001` | Conservative physical-core action; seven-sector microscopic action, minimal Einstein-Cartan torsion-elimination contact term, observer-interface term | `docs/physics/HE-PHYS-001-conservative-physical-core-action.md` |
@@ -43,6 +44,10 @@ Future content should cite `HE-INT-001` rather than `HE-FND-*` for typed access-
 | `HE-PROJ-002` | Sufficiency hierarchy and semantic holography | active |
 | `HE-PROJ-003` | Metric-measure bridge for semantic stability | active |
 | `HE-PROJ-004..010` | Reserved | future |
+| `HE-PROJ-ACT-001` | Periodic-activation representational bound | active |
+| `HE-PROJ-ACT-002` | Multi-layer periodic dictionary / depth multiplication theorem | reserved |
+| `HE-PROJ-ACT-003` | Regularized tangent-wave activation analysis | reserved |
+| `HE-PROJ-ACT-004` | Formal prime-wave falsification replay with receipts | reserved |
 | `HE-PROJ-INV-001` | Existence: every countable Markov kernel admits a deterministic realization (skew product) | active |
 | `HE-PROJ-INV-002` | Minimality: smallest finite realization; structure of `cx(K)` | reserved; genuinely open |
 | `HE-PROJ-INV-003` | Identifiability: natural-extension uniqueness for finite `Y` | active |
@@ -96,6 +101,7 @@ The following anti-seed identifiers are active in `docs/anti-seed-einstein.md`:
 | `A-HE-PROJ-003` | Universal realizability is not explanation |
 | `A-HE-PROJ-004` | Semantic stability is not task stability or microstate recovery |
 | `A-HE-PROJ-005` | Canonical Markov shift is not physical substrate uniqueness |
+| `A-HE-PROJ-ACT-001` | Activation fits are not physical constants or arithmetic structure |
 | `A-HE-PHYS-001` | Conservative core is not Standard Model derivation |
 | `A-HE-PHYS-002` | Algebraic torsion is the minimal branch |
 | `A-HE-PHYS-003` | Boundary term completion depends on boundary data |

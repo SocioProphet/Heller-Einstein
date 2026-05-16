@@ -1,4 +1,4 @@
-# Heller-Einstein Anti-Seed Register v1.4
+# Heller-Einstein Anti-Seed Register v1.5
 
 Heller-Einstein operates downstream of Heller-Godel framework anti-seed and PFK anti-seed. The entries below are Einstein-Heller-scaffold-specific extensions.
 
@@ -61,6 +61,16 @@ Failure mode: citing `HE-PROJ-INV-003` as if it proves physical substrate unique
 Correct statement: identifiability holds only under the four stated hypotheses: invertibility, measure preservation, stationarity, and observer-generation. Outside that class, non-uniqueness remains. The theorem selects a canonical representative, not a physical substrate.
 
 Closure condition: this entry remains active unless a later physical-admissibility theory proves that the Markov-shift realization class is not merely canonical but physically forced.
+
+## A-HE-PROJ-ACT-001 — Activation fits are not physical constants or arithmetic structure
+
+`HE-PROJ-ACT-001` treats periodic activation maps as Lipschitz lifts when the relevant regularity hypotheses hold. It records the historical prime-wave case as a locked-parameter falsification, not as a derivation of arithmetic or physics.
+
+Failure mode: citing an in-sample fit from a periodic activation probe as evidence for a physical constant, prime law, RH/GRH statement, or stable representation of the primes.
+
+Correct statement: activation-layer contraction is a representation-stability theorem. The historical prime-wave probe is a negative worked example: it does not derive the fine-structure constant, does not represent primes out of sample, and does not create a number-theoretic theorem. Any future prime/activation result requires locked-parameter out-of-sample validation and a separate identifier.
+
+Closure condition: this entry remains active permanently for `HE-PROJ-ACT-*` content unless a future theorem explicitly supplies the missing out-of-sample, parameter-free, and claim-graded derivation.
 
 ## A-HE-PHYS-001 — Conservative core is not Standard Model derivation
 

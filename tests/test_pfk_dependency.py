@@ -21,6 +21,7 @@ REQUIRED_A_HE = [
     "A-HE-PROJ-003",
     "A-HE-PROJ-004",
     "A-HE-PROJ-005",
+    "A-HE-PROJ-ACT-001",
     "A-HE-PHYS-001",
     "A-HE-PHYS-002",
     "A-HE-PHYS-003",
@@ -106,6 +107,10 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
         self.assertIn("HE-PROJ-001", text)
         self.assertIn("HE-PROJ-002", text)
         self.assertIn("HE-PROJ-003", text)
+        self.assertIn("HE-PROJ-ACT-001", text)
+        self.assertIn("HE-PROJ-ACT-002", text)
+        self.assertIn("HE-PROJ-ACT-003", text)
+        self.assertIn("HE-PROJ-ACT-004", text)
         self.assertIn("HE-PROJ-INV-001", text)
         self.assertIn("HE-PROJ-INV-002", text)
         self.assertIn("HE-PROJ-INV-003", text)
@@ -155,6 +160,23 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
         self.assertIn("Task-tier deferral", text)
         self.assertIn("does not derive quantum mechanics", text)
         self.assertIn("A-HE-PROJ-004", text)
+
+    def test_periodic_activation_bound_exists(self) -> None:
+        path = ROOT / "docs" / "projection" / "HE-PROJ-ACT-001-periodic-activation-bound.md"
+        self.assertTrue(path.exists(), "HE-PROJ-ACT-001 theorem document missing")
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("HE-PROJ-ACT-001", text)
+        self.assertIn("HE-PROJ-001", text)
+        self.assertIn("HE-PROJ-003", text)
+        self.assertIn("L_S |w| L_phi delta(K)", text)
+        self.assertIn("Tangent-wave caveat", text)
+        self.assertIn("not a globally Lipschitz activation", text)
+        self.assertIn("does not", text)
+        self.assertIn("fine-structure constant", text)
+        self.assertIn("A-HE-PROJ-ACT-001", text)
+        self.assertIn("HE-PROJ-ACT-002", text)
+        self.assertIn("HE-PROJ-ACT-003", text)
+        self.assertIn("HE-PROJ-ACT-004", text)
 
     def test_inverse_realizability_theorem_exists(self) -> None:
         path = ROOT / "docs" / "projection" / "HE-PROJ-INV-001-markov-kernel-realizability.md"
