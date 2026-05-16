@@ -9,6 +9,7 @@ Status: namespace reservation and governance record.
 | `HE-INT-001` | Formal interface ontology spec: typed access chain, trace maps, semantic lifts, reconstruction maps, latent fibers, semantic equivalence | `docs/interface/HE-INT-001-interface-ontology.md` |
 | `HE-PROJ-001` | Projection-induced Markov kernel theorem | `docs/projection/HE-PROJ-001-projection-induced-stochasticity.md` |
 | `HE-PROJ-002` | Sufficiency hierarchy and semantic holography; microstate implies semantic sufficiency; converse counterexample; rate-distortion framing | `docs/projection/HE-PROJ-002-sufficiency-hierarchy.md` |
+| `HE-PROJ-003` | Metric-measure bridge for semantic stability; semantic pseudometric and Wasserstein contraction theorem | `docs/projection/HE-PROJ-003-metric-measure-bridge.md` |
 | `HE-PROJ-INV-001` | Markov kernel realizability theorem | `docs/projection/HE-PROJ-INV-001-markov-kernel-realizability.md` |
 | `HE-PHYS-001` | Conservative physical-core action; seven-sector microscopic action, minimal Einstein-Cartan torsion-elimination contact term, observer-interface term | `docs/physics/HE-PHYS-001-conservative-physical-core-action.md` |
 | `HE-EX-001` | Discrete phase cycle on `Z_12` with two-cell trace and kernel `[[2/3,1/3],[1/3,2/3]]` | `docs/examples/HE-EX-001-discrete-phase-cycle.md` |
@@ -39,7 +40,7 @@ Future content should cite `HE-INT-001` rather than `HE-FND-*` for typed access-
 |---|---|---|
 | `HE-PROJ-001` | Projection-induced Markov kernel theorem | active |
 | `HE-PROJ-002` | Sufficiency hierarchy and semantic holography | active |
-| `HE-PROJ-003` | Semantic right-inverse criterion | reserved |
+| `HE-PROJ-003` | Metric-measure bridge for semantic stability | active |
 | `HE-PROJ-004..010` | Reserved | future |
 | `HE-PROJ-INV-001` | Markov kernel realizability theorem | active |
 | `HE-PROJ-INV-002` | Minimal realization problem | reserved; open |
@@ -90,6 +91,7 @@ The following anti-seed identifiers are active in `docs/anti-seed-einstein.md`:
 | `A-HE-PROJ-001` | Projection-induced stochasticity does not derive quantum mechanics |
 | `A-HE-PROJ-002` | Sufficiency hierarchy tiers are distinct |
 | `A-HE-PROJ-003` | Universal realizability is not explanation |
+| `A-HE-PROJ-004` | Semantic stability is not task stability or microstate recovery |
 | `A-HE-PHYS-001` | Conservative core is not Standard Model derivation |
 | `A-HE-PHYS-002` | Algebraic torsion is the minimal branch |
 | `A-HE-PHYS-003` | Boundary term completion depends on boundary data |

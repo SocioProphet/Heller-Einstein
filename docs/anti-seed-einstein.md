@@ -1,4 +1,4 @@
-# Heller-Einstein Anti-Seed Register v1.2
+# Heller-Einstein Anti-Seed Register v1.3
 
 Heller-Einstein operates downstream of Heller-Godel framework anti-seed and PFK anti-seed. The entries below are Einstein-Heller-scaffold-specific extensions.
 
@@ -41,6 +41,16 @@ Failure mode: citing deterministic-substrate realizability as if it explains why
 Correct statement: existence of a deterministic substrate is universal. Explanatory weight requires additional constraints such as minimality, identifiability, canonical fiber measures, physical admissibility, semantic compatibility, or task structure.
 
 Closure condition: this entry remains active unless a later theory supplies a canonical minimal or identifiable realization principle for the relevant class of kernels.
+
+## A-HE-PROJ-004 — Semantic stability is not task stability or microstate recovery
+
+`HE-PROJ-003` proves a semantic-tier metric-measure bridge. It controls Wasserstein contraction of semantic distortion under the semantic pseudometric induced by the observer lift.
+
+Failure mode: citing semantic contraction as if it proves task success, action-policy stability, microstate reconstruction, or physical recovery.
+
+Correct statement: semantic stability is defined at the level of `d_sem(y,y') = d_M(S(y),S(y'))`. Task-tier claims require `HE-PROJ-TASK-001` primitives. Microstate reconstruction requires separate conditions from `HE-INT-*` / `HE-PROJ-002`.
+
+Closure condition: this entry remains active until task-tier and microstate-tier bridge theorems are separately proven and explicitly cited.
 
 ## A-HE-PHYS-001 — Conservative core is not Standard Model derivation
 
