@@ -1,4 +1,4 @@
-# Heller-Einstein Anti-Seed Register v1.0
+# Heller-Einstein Anti-Seed Register v1.1
 
 Heller-Einstein operates downstream of Heller-Godel framework anti-seed and PFK anti-seed. The entries below are Einstein-Heller-scaffold-specific extensions.
 
@@ -49,6 +49,16 @@ Correct statement: propagating-torsion alternatives are different branches and a
 The gravitational boundary term remains typed in the microscopic first-order branch because its correct completion depends on the chosen boundary data.
 
 Correct statement: any completion, including Gibbons-Hawking-York or first-order Holst-tetrad variants, must declare boundary data explicitly.
+
+## A-HE-PHYS-004 — Action transcription is not convention verification
+
+`HE-PHYS-001` records the conservative physical-core action at transcription-grade / rendered-page verified status from `einstein_heller_v1_7_verified_source_candidate.pdf`. That status is not the same as native-source convention verification.
+
+Failure mode: citing `HE-PHYS-001` as if it certified sign conventions, normal-vector orientation, variational boundary terms, or all equation-of-motion derivations.
+
+Correct statement: `HE-PHYS-001` records the action sectors and the standard minimal Einstein-Cartan torsion-elimination contact term. Equations of motion, sign conventions, and boundary-normal choices are reserved for `HE-PHYS-002` and must be checked explicitly.
+
+Closure condition: this entry remains active until a native-source and convention-checked physical-core PR promotes the relevant sector beyond transcription-grade.
 
 ## A-HE-PLC-001 — Placeholder spaces are typed, not topological
 

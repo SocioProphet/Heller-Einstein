@@ -9,6 +9,7 @@ Status: namespace reservation and governance record.
 | `HE-INT-001` | Formal interface ontology spec: typed access chain, trace maps, semantic lifts, reconstruction maps, latent fibers, semantic equivalence | `docs/interface/HE-INT-001-interface-ontology.md` |
 | `HE-PROJ-001` | Projection-induced Markov kernel theorem | `docs/projection/HE-PROJ-001-projection-induced-stochasticity.md` |
 | `HE-PROJ-002` | Sufficiency hierarchy and semantic holography; microstate implies semantic sufficiency; converse counterexample; rate-distortion framing | `docs/projection/HE-PROJ-002-sufficiency-hierarchy.md` |
+| `HE-PHYS-001` | Conservative physical-core action; seven-sector microscopic action, minimal Einstein-Cartan torsion-elimination contact term, observer-interface term | `docs/physics/HE-PHYS-001-conservative-physical-core-action.md` |
 | `HE-EX-001` | Discrete phase cycle on `Z_12` with two-cell trace and kernel `[[2/3,1/3],[1/3,2/3]]` | `docs/examples/HE-EX-001-discrete-phase-cycle.md` |
 | `HE-EX-002` | Continuous phase flow on `S^1` with matched kernel | `docs/examples/HE-EX-002-continuous-phase-flow.md` |
 
@@ -46,9 +47,9 @@ Future content should cite `HE-INT-001` rather than `HE-FND-*` for typed access-
 
 | Identifier | Role | Status |
 |---|---|---|
-| `HE-PHYS-001` | Microscopic Einstein-Cartan-Dirac action with scalar and pseudoscalar fields | reserved |
-| `HE-PHYS-002` | Effective torsion-eliminated action and axial current contact term | reserved |
-| `HE-PHYS-003` | Equations of motion | reserved |
+| `HE-PHYS-001` | Conservative physical-core action; transcription-grade / rendered-page verified | active |
+| `HE-PHYS-002` | Equations of motion and convention-checked variational derivatives | reserved |
+| `HE-PHYS-003` | Effective torsion-eliminated action details and convention crosswalk | reserved |
 | `HE-PHYS-004` | Interface boundary conditions on observer hypersurface | reserved |
 | `HE-PHYS-005..010` | Reserved | future |
 
@@ -88,6 +89,7 @@ The following anti-seed identifiers are active in `docs/anti-seed-einstein.md`:
 | `A-HE-PHYS-001` | Conservative core is not Standard Model derivation |
 | `A-HE-PHYS-002` | Algebraic torsion is the minimal branch |
 | `A-HE-PHYS-003` | Boundary term completion depends on boundary data |
+| `A-HE-PHYS-004` | Action transcription is not convention verification |
 | `A-HE-PLC-001` | Placeholder spaces are typed, not topological |
 | `A-HE-EX-001` | Exemplars are fixture-grade |
 | `A-HE-MTH-001` | Universal Bridge constraint applies analogously |

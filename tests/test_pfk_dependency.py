@@ -21,6 +21,7 @@ REQUIRED_A_HE = [
     "A-HE-PHYS-001",
     "A-HE-PHYS-002",
     "A-HE-PHYS-003",
+    "A-HE-PHYS-004",
     "A-HE-PLC-001",
     "A-HE-EX-001",
     "A-HE-MTH-001",
@@ -101,6 +102,8 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
         self.assertIn("HE-INT-001", text)
         self.assertIn("HE-PROJ-001", text)
         self.assertIn("HE-PROJ-002", text)
+        self.assertIn("HE-PHYS-001", text)
+        self.assertIn("HE-PHYS-002", text)
         self.assertIn("HE-EX-001", text)
         self.assertIn("HE-EX-002", text)
         self.assertIn("HE-PROJ-INV-001", text)
@@ -142,6 +145,19 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
         self.assertIn("Rate-distortion framing", text)
         self.assertIn("HE-PROJ-TASK-001", text)
         self.assertIn("does not derive quantum mechanics", text)
+
+    def test_physical_core_action_exists(self) -> None:
+        path = ROOT / "docs" / "physics" / "HE-PHYS-001-conservative-physical-core-action.md"
+        self.assertTrue(path.exists(), "HE-PHYS-001 action document missing")
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("HE-PHYS-001", text)
+        self.assertIn("transcription-grade", text)
+        self.assertIn("S_EH^micro", text)
+        self.assertIn("S_Sigma_O", text)
+        self.assertIn("3 kappa / 16", text)
+        self.assertIn("HE-PHYS-002", text)
+        self.assertIn("does not", text)
+        self.assertIn("derive the Standard Model gauge group", text)
 
     def test_provenance_records_exist(self) -> None:
         v17 = ROOT / "docs" / "provenance" / "einstein-heller-v1_7.md"
