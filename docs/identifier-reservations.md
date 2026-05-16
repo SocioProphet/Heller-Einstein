@@ -1,0 +1,89 @@
+# Heller-Einstein Identifier Reservations
+
+Status: namespace reservation and governance record.
+
+## Active identifiers
+
+No positive `HE-*` content identifiers are active in this bootstrap PR. This PR establishes the namespace, anti-seed register, provenance record, dependency discipline, and scaffold.
+
+## Reserved identifiers
+
+### HE-FND-* — Foundational vocabulary
+
+| Identifier | Role | Status |
+|---|---|---|
+| `HE-FND-001` | Typed access chain `X -> Y_O -> M_O` | reserved |
+| `HE-FND-002` | Observer-relative semantic equivalence | reserved |
+| `HE-FND-003` | Reconstruction map and latent fiber | reserved |
+| `HE-FND-004..010` | Reserved | future |
+
+### HE-INT-* — Interface ontology
+
+| Identifier | Role | Status |
+|---|---|---|
+| `HE-INT-001` | Formal interface ontology spec | reserved |
+| `HE-INT-002` | Reconstruction structure and latent fibers | reserved |
+| `HE-INT-003..010` | Reserved | future |
+
+### HE-PROJ-* — Projection-induced stochasticity
+
+| Identifier | Role | Status |
+|---|---|---|
+| `HE-PROJ-001` | Projection-induced Markov kernel theorem | reserved |
+| `HE-PROJ-002` | Sufficiency hierarchy | reserved |
+| `HE-PROJ-003` | Semantic right-inverse criterion | reserved |
+| `HE-PROJ-004..010` | Reserved | future |
+
+### HE-PHYS-* — Conservative physical core
+
+| Identifier | Role | Status |
+|---|---|---|
+| `HE-PHYS-001` | Microscopic Einstein-Cartan-Dirac action with scalar and pseudoscalar fields | reserved |
+| `HE-PHYS-002` | Effective torsion-eliminated action and axial current contact term | reserved |
+| `HE-PHYS-003` | Equations of motion | reserved |
+| `HE-PHYS-004` | Interface boundary conditions on observer hypersurface | reserved |
+| `HE-PHYS-005..010` | Reserved | future |
+
+### HE-PLC-* — Placeholder spaces
+
+| Identifier | Role | Status |
+|---|---|---|
+| `HE-PLC-001` | Typed placeholder chain `X_15 -> X_7 -> X_3 -> X_2` | reserved |
+| `HE-PLC-002..005` | Reserved | future |
+
+### HE-EX-* — Canonical exemplars
+
+| Identifier | Role | Status |
+|---|---|---|
+| `HE-EX-001` | Discrete phase cycle on `Z_12` with two-cell trace and kernel `[[2/3,1/3],[1/3,2/3]]` | reserved |
+| `HE-EX-002` | Continuous phase flow on `S^1` with matched kernel | reserved |
+| `HE-EX-003..005` | Standards-grounded interface examples | future |
+
+### HE-MTH-* — Methodology
+
+| Identifier | Role | Status |
+|---|---|---|
+| `HE-MTH-001` | Structural-cognate map to Heller-Dirac `HD-*` identifiers | reserved |
+| `HE-MTH-002..005` | Reserved | future |
+
+### A-HE-* — Anti-seed register
+
+The following anti-seed identifiers are active in `docs/anti-seed-einstein.md`:
+
+| Identifier | Failure mode |
+|---|---|
+| `A-HE-FND-001` | Speculative content scope discipline |
+| `A-HE-INT-001` | Ontology does not collapse to boundary |
+| `A-HE-INT-002` | Semantic lift is observer-relative |
+| `A-HE-PROJ-001` | Projection-induced stochasticity does not derive quantum mechanics |
+| `A-HE-PROJ-002` | Sufficiency hierarchy tiers are distinct |
+| `A-HE-PHYS-001` | Conservative core is not Standard Model derivation |
+| `A-HE-PHYS-002` | Algebraic torsion is the minimal branch |
+| `A-HE-PHYS-003` | Boundary term completion depends on boundary data |
+| `A-HE-PLC-001` | Placeholder spaces are typed, not topological |
+| `A-HE-EX-001` | Exemplars are fixture-grade |
+| `A-HE-MTH-001` | Universal Bridge constraint applies analogously |
+
+## Activation rule
+
+A reserved `HE-*` identifier becomes active only when a PR adds a dedicated specification or fixture file and updates this registry. Downstream consumers must cite active identifiers only, unless explicitly citing a reservation as pending work.
