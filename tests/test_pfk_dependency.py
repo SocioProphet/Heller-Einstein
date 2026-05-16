@@ -5,6 +5,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 HELLER_GODEL_COMMIT = "988307215ad38ccb16514311222184a1b757752b"
+HELLER_DIRAC_COMMIT = "e1d7c863f4e0fc6e5e2ab485370cc75b2dba3993"
 CANONICAL_SCHEMA_NAMES = {
     "claim_ledger_row.schema.json",
     "event_ir.schema.json",
@@ -37,12 +38,16 @@ REQUIRED_PREFIXES = [
 
 
 class TestHellerEinsteinBootstrap(unittest.TestCase):
-    def test_dependencies_file_exists_and_pins_heller_godel(self) -> None:
+    def test_dependencies_file_exists_and_pins_upstreams(self) -> None:
         text = (ROOT / "DEPENDENCIES.md").read_text(encoding="utf-8")
         self.assertIn(HELLER_GODEL_COMMIT, text)
+        self.assertIn(HELLER_DIRAC_COMMIT, text)
         self.assertIn("HG-MTH-005", text)
         self.assertIn("PFK-SCHEMA-001", text)
         self.assertIn("A-PFK-SCHEMA-001", text)
+        self.assertIn("HD-FND-007", text)
+        self.assertIn("HD-FND-008", text)
+        self.assertIn("A-HD-TM-001", text)
 
     def test_no_local_canonical_schema_shadowing(self) -> None:
         local_schemas = ROOT / "schemas"
@@ -61,6 +66,18 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
             schema_path = hg_root / "proof_fabric_kernel" / "schemas" / name
             self.assertTrue(schema_path.exists(), f"missing canonical PFK schema: {name}")
 
+    def test_heller_dirac_paths_resolve_when_available(self) -> None:
+        hd_root_value = os.environ.get("HELLER_DIRAC_ROOT")
+        if not hd_root_value:
+            self.skipTest("HELLER_DIRAC_ROOT not set; dependency-resolution check runs in workflow")
+        hd_root = Path(hd_root_value)
+        for rel in [
+            "docs/foundations/HD-FND-007-modular-operator.md",
+            "docs/foundations/HD-FND-008-kms.md",
+            "docs/anti-seed-dirac.md",
+        ]:
+            self.assertTrue((hd_root / rel).exists(), f"missing Heller-Dirac path: {rel}")
+
     def test_scope_doc_exists(self) -> None:
         path = ROOT / "docs" / "scope.md"
         self.assertTrue(path.exists())
@@ -76,19 +93,38 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
         for entry in REQUIRED_A_HE:
             self.assertIn(entry, text)
 
-    def test_identifier_reservations_exist(self) -> None:
+    def test_identifier_reservations_exist_and_proj_active(self) -> None:
         path = ROOT / "docs" / "identifier-reservations.md"
         self.assertTrue(path.exists())
         text = path.read_text(encoding="utf-8")
         for prefix in REQUIRED_PREFIXES:
             self.assertIn(prefix, text)
+        self.assertIn("HE-PROJ-001", text)
+        self.assertIn("HE-EX-001", text)
+        self.assertIn("HE-EX-002", text)
+        self.assertIn("HE-PROJ-INV-001", text)
 
-    def test_provenance_record_exists(self) -> None:
-        path = ROOT / "docs" / "provenance" / "einstein-heller-v1_7.md"
-        self.assertTrue(path.exists())
-        text = path.read_text(encoding="utf-8")
-        self.assertIn("rendered-artifact reconstruction", text)
-        self.assertIn("provenance-only", text)
+    def test_projection_theorem_and_fixtures_exist(self) -> None:
+        theorem = ROOT / "docs" / "projection" / "HE-PROJ-001-projection-induced-stochasticity.md"
+        ex1 = ROOT / "docs" / "examples" / "HE-EX-001-discrete-phase-cycle.md"
+        ex2 = ROOT / "docs" / "examples" / "HE-EX-002-continuous-phase-flow.md"
+        for path in [theorem, ex1, ex2]:
+            self.assertTrue(path.exists(), f"missing HE projection artifact: {path}")
+        theorem_text = theorem.read_text(encoding="utf-8")
+        self.assertIn("Markov kernel", theorem_text)
+        self.assertIn("does not derive quantum mechanics", theorem_text)
+        self.assertIn("HE-PROJ-INV-001", theorem_text)
+        self.assertIn("Temporal Mechanics v0.24.1", theorem_text)
+        self.assertIn("[[2/3, 1/3], [1/3, 2/3]]", ex1.read_text(encoding="utf-8"))
+        self.assertIn("[[2/3, 1/3], [1/3, 2/3]]", ex2.read_text(encoding="utf-8"))
+
+    def test_provenance_records_exist(self) -> None:
+        v17 = ROOT / "docs" / "provenance" / "einstein-heller-v1_7.md"
+        tm = ROOT / "docs" / "provenance" / "temporal-mechanics-v0_24_1.md"
+        for path in [v17, tm]:
+            self.assertTrue(path.exists())
+        self.assertIn("rendered-artifact reconstruction", v17.read_text(encoding="utf-8"))
+        self.assertIn("Temporal Mechanics", tm.read_text(encoding="utf-8"))
 
     def test_license_exists(self) -> None:
         path = ROOT / "LICENSE"
