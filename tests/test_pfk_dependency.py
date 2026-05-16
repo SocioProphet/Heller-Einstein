@@ -18,6 +18,7 @@ REQUIRED_A_HE = [
     "A-HE-INT-002",
     "A-HE-PROJ-001",
     "A-HE-PROJ-002",
+    "A-HE-PROJ-003",
     "A-HE-PHYS-001",
     "A-HE-PHYS-002",
     "A-HE-PHYS-003",
@@ -102,11 +103,13 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
         self.assertIn("HE-INT-001", text)
         self.assertIn("HE-PROJ-001", text)
         self.assertIn("HE-PROJ-002", text)
+        self.assertIn("HE-PROJ-INV-001", text)
+        self.assertIn("HE-PROJ-INV-002", text)
+        self.assertIn("HE-PROJ-INV-003", text)
         self.assertIn("HE-PHYS-001", text)
         self.assertIn("HE-PHYS-002", text)
         self.assertIn("HE-EX-001", text)
         self.assertIn("HE-EX-002", text)
-        self.assertIn("HE-PROJ-INV-001", text)
         self.assertIn("HE-PROJ-TASK-001", text)
         self.assertIn("HE-FND-* — withdrawn", text)
         self.assertNotIn("| `HE-FND-001`", text)
@@ -134,6 +137,18 @@ class TestHellerEinsteinBootstrap(unittest.TestCase):
         self.assertIn("Temporal Mechanics v0.24.1", theorem_text)
         self.assertIn("[[2/3, 1/3], [1/3, 2/3]]", ex1.read_text(encoding="utf-8"))
         self.assertIn("[[2/3, 1/3], [1/3, 2/3]]", ex2.read_text(encoding="utf-8"))
+
+    def test_inverse_realizability_theorem_exists(self) -> None:
+        path = ROOT / "docs" / "projection" / "HE-PROJ-INV-001-markov-kernel-realizability.md"
+        self.assertTrue(path.exists(), "HE-PROJ-INV-001 theorem document missing")
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("HE-PROJ-INV-001", text)
+        self.assertIn("Countable Markov kernels are deterministically realizable", text)
+        self.assertIn("X = Y x [0,1)", text)
+        self.assertIn("Universal realizability is not explanation", text)
+        self.assertIn("HE-PROJ-INV-002", text)
+        self.assertIn("HE-PROJ-INV-003", text)
+        self.assertIn("does not derive quantum mechanics", text)
 
     def test_sufficiency_hierarchy_exists(self) -> None:
         path = ROOT / "docs" / "projection" / "HE-PROJ-002-sufficiency-hierarchy.md"
