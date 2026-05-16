@@ -270,9 +270,8 @@ The inverse is not unique and not explanatory without extra constraints.
 
 ## Boundaries
 
-This document does not:
+This document does not derive quantum mechanics. It also does not:
 
-- derive quantum mechanics;
 - derive the Born rule;
 - prove that physical probability is projection-induced;
 - explain why a particular physical kernel has its observed form;
