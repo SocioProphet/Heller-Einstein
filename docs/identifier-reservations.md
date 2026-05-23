@@ -18,6 +18,7 @@ Status: namespace reservation and governance record.
 | `HE-PHYS-001` | Conservative physical-core action; seven-sector microscopic action, minimal Einstein-Cartan torsion-elimination contact term, observer-interface term | `docs/physics/HE-PHYS-001-conservative-physical-core-action.md` |
 | `HE-EX-001` | Discrete phase cycle on `Z_12` with two-cell trace and kernel `[[2/3,1/3],[1/3,2/3]]` | `docs/examples/HE-EX-001-discrete-phase-cycle.md` |
 | `HE-EX-002` | Continuous phase flow on `S^1` with matched kernel | `docs/examples/HE-EX-002-continuous-phase-flow.md` |
+| `HE-MTH-001` | Born-rule interface routing across Heller-Einstein, Heller-Dirac, and Yang-Mills | `docs/methodology/born-rule-interface-routing.md` |
 
 ## Withdrawn namespace
 
@@ -87,8 +88,9 @@ Future content should cite `HE-INT-001` rather than `HE-FND-*` for typed access-
 
 | Identifier | Role | Status |
 |---|---|---|
-| `HE-MTH-001` | Structural-cognate map to Heller-Dirac `HD-*` identifiers | reserved |
-| `HE-MTH-002..005` | Reserved | future |
+| `HE-MTH-001` | Born-rule interface routing across Heller-Einstein, Heller-Dirac, and Yang-Mills | active |
+| `HE-MTH-002` | Structural-cognate map to Heller-Dirac `HD-*` identifiers | reserved |
+| `HE-MTH-003..005` | Reserved | future |
 
 ### A-HE-* — Anti-seed register
 
