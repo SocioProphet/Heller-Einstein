@@ -126,6 +126,30 @@ The placeholder chain `X_15 -> X_7 -> X_3 -> X_2` encodes typed slots, not topol
 
 Correct statement: no claim is made that the placeholders are spheres, homogeneous spaces, or bundle bases.
 
+## A-HE-PLC-002 — Realization placeholders are not realizations
+
+The realization-question placeholders `HE-PLC-002`, `HE-PLC-003`, and `HE-PLC-004` declare possible typed sites for future work. They do not assert that any realization exists.
+
+Correct statement: lattice Dirac spectral flow, transfer-matrix center action, and path-beta SU(3) extension are placeholder questions until separate scope and proof work is opened.
+
+## A-HE-INT-004 — Realization morphism question is not a coherence claim
+
+`HE-INT-004` asks for the type of a possible morphism from upstream algebraic/spectral data to an operational projection quotient. It does not assert coherence between the participating repositories.
+
+Correct statement: a morphism-type question is not a morphism construction. Coherence requires a future typed-interface artifact and paired boundary entries where applicable.
+
+## A-HE-PROJ-002 — Projection-layer factorization question is not a factorization theorem
+
+`HE-PROJ-002` asks whether a proposed realization factors through `HE-PROJ-001`. It does not prove that such a factorization exists.
+
+Correct statement: any claimed factorization must identify `X`, `Y`, `tau`, `F_y`, `mu_y`, and `f`, then verify the hypotheses of `HE-PROJ-001`.
+
+## A-HE-SH-007 — Sufficiency-tier classification is not sufficiency proof
+
+`HE-SH-007` asks which sufficiency tier a candidate realization would occupy. It does not prove microstate, semantic, or task sufficiency.
+
+Correct statement: any sufficiency claim must specify the relevant tier and prove the corresponding condition.
+
 ## A-HE-EX-001 — Exemplars are fixture-grade
 
 The canonical exemplars demonstrate projection-induced stochasticity on minimal fixtures.
